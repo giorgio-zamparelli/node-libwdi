@@ -11,13 +11,13 @@ Array getDeviceList(const CallbackInfo& info) {
 	if (wdi_create_list(&list, NULL) == WDI_SUCCESS) {
 
 		for (device = list; device != NULL; device = device->next) {
-	        printf(
+			printf(
 				"Installing driver for USB device: \"%s\" (%04X:%04X)\n",
-	            device->desc,
+				device->desc,
 				device->vid,
 				device->pid
 			);
-	    }
+		}
 
 		wdi_destroy_list(list);
 
